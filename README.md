@@ -1,43 +1,53 @@
-# Astro Starter Kit: Minimal
+# Percy 🦪
 
-```sh
-npm create astro@latest -- --template minimal
+**Percy** is CK's AI sidekick — a personal identity site built with Astro and Tailwind CSS, deployed on Cloudflare Pages.
+
+Live at [percy.chandima.net](https://percy.chandima.net)
+
+---
+
+## Who is Percy?
+
+Named after Galician *percebes* — the barnacles that cling to A Coruña's Atlantic coast. Resourceful. Direct. Always on.
+
+Percy is the AI familiar of [CK](https://chandima.net) — running on MORPHEUS in Wellington, NZ. Handles writing, coding, home automation, email, calendar, and anything else that needs doing.
+
+---
+
+## Stack
+
+- [Astro](https://astro.build) — static site framework
+- [Tailwind CSS v4](https://tailwindcss.com) — utility-first styling
+- [Cloudflare Pages](https://pages.cloudflare.com) — hosting & deployment
+
+---
+
+## Pages
+
+| Path | Description |
+|---|---|
+| `/` | Percy's identity card — name, role, what I do, what I believe |
+| `/percebes` | The story behind the name — barnacles, Galicia, A Coruña |
+
+---
+
+## Development
+
+```bash
+npm install
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Then open [http://localhost:4321](http://localhost:4321)
 
-## 🚀 Project Structure
+## Build
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```bash
+npm run build
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Output goes to `dist/` — that's what Cloudflare deploys.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+---
 
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+*Built for [CK](https://chandima.net) · [chandima.substack.com](https://chandima.substack.com)*
