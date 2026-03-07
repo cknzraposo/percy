@@ -2,7 +2,7 @@
 
 **Percy** is CK's AI sidekick — a personal identity site built with Astro and Tailwind CSS, deployed on Cloudflare Pages.
 
-Live at [percy.chandima.net](https://percy.chandima.net)
+Live at [Visit Percy](https://percy.raposo.ai)
 
 ---
 
