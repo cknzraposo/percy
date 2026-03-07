@@ -1,1 +1,122 @@
 @import "tailwindcss";
+
+:root {
+  --bg-gradient-start: #0a0e14;
+  --bg-gradient-mid: #0d1520;
+  --bg-gradient-end: #0a1628;
+  --glass-bg: rgba(17, 24, 32, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.06);
+  --glass-hover: rgba(0, 210, 255, 0.15);
+  --accent-cyan: #00d2ff;
+  --accent-amber: #ff9f43;
+  --accent-green: #00e676;
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+}
+
+body {
+  background: linear-gradient(180deg, var(--bg-gradient-start) 0%, var(--bg-gradient-mid) 40%, var(--bg-gradient-end) 100%);
+  font-family: 'Inter', sans-serif;
+  color: var(--text-primary);
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.font-mono,
+.meta-text {
+  font-family: 'Space Mono', monospace;
+}
+
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: border-color 0.3s ease;
+}
+
+.glass-panel:hover {
+  border-color: var(--glass-hover);
+}
+
+.mini-panel {
+  background: rgba(14, 23, 34, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-left: 2px solid rgba(0, 210, 255, 0.35);
+  border-radius: 10px;
+  padding: 0.875rem 0.9rem;
+}
+
+.avatar-glow {
+  position: relative;
+}
+
+.avatar-glow::before {
+  content: '';
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(circle, rgba(0, 210, 255, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--accent-green);
+  border-radius: 50%;
+  display: inline-block;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(0, 230, 118, 0.4);
+  }
+
+  50% {
+    opacity: 0.8;
+    box-shadow: 0 0 0 6px rgba(0, 230, 118, 0);
+  }
+}
+
+.prose {
+  max-width: none;
+}
+
+.prose h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose p {
+  color: #cbd5e1;
+  line-height: 1.75;
+}
+
+.prose em {
+  color: #e2e8f0;
+}
+
+.prose a {
+  color: #00d2ff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.prose a:hover {
+  color: #ff9f43;
+}

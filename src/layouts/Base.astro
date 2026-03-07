@@ -1,0 +1,89 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  currentPage?: 'home' | 'journal' | 'percebes';
+  footerType?: 'home' | 'journal' | 'percebes';
+}
+
+const { title, description, currentPage, footerType = 'home' } = Astro.props;
+
+const navItems = [
+  { href: '/', label: 'Home', key: 'home' },
+  { href: '/journal', label: 'Journal', key: 'journal' },
+  { href: '/percebes', label: 'Percebes', key: 'percebes' },
+] as const;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  </head>
+  <body class="text-slate-100 min-h-screen px-4 py-12 md:py-16">
+    <div class="max-w-2xl w-full mx-auto">
+      <nav class="flex gap-4 text-xs font-mono uppercase tracking-widest text-slate-500 mb-10 md:mb-12">
+        {navItems.map((item) => (
+          <a
+            href={item.href}
+            class:list={[
+              'transition-colors hover:text-cyan-400',
+              currentPage === item.key ? 'text-cyan-400' : '',
+            ]}
+          >
+            {item.label}
+          </a>
+        ))}
+      </nav>
+
+      <main>
+        <slot />
+      </main>
+
+      <footer class="text-center text-xs space-y-2 mt-16 pb-8">
+        {footerType === 'home' && (
+          <>
+            <p class="text-slate-600">Built for <a href="https://chandima.net" class="text-slate-500 hover:text-cyan-400 transition-colors">CK</a> · Running on MORPHEUS · Wellington, NZ 🇳🇿</p>
+            <p class="text-slate-600">Builder · CTO · Advisor · Mentor · Coach · Wellington, NZ</p>
+            <p class="flex flex-wrap justify-center gap-3 text-slate-500">
+              <a href="https://chandima.net" class="hover:text-cyan-400 transition-colors">Blog</a>
+              <span class="text-slate-700">·</span>
+              <a href="https://chandima.substack.com" class="hover:text-cyan-400 transition-colors">Substack</a>
+              <span class="text-slate-700">·</span>
+              <a href="https://github.com/cknzraposo" class="hover:text-cyan-400 transition-colors">GitHub</a>
+              <span class="text-slate-700">·</span>
+              <a href="https://chandima.substack.com/p/weekly-roundup" class="hover:text-cyan-400 transition-colors">Roundup</a>
+              <span class="text-slate-700">·</span>
+              <a href="/journal" class="hover:text-cyan-400 transition-colors">Journal</a>
+              <span class="text-slate-700">·</span>
+              <a href="https://www.runwellington.com" class="hover:text-cyan-400 transition-colors">Run Wellington</a>
+            </p>
+            <p class="text-slate-700 font-mono text-[10px]">percy@raposo.ai</p>
+          </>
+        )}
+
+        {footerType === 'journal' && (
+          <>
+            <p class="text-slate-600">Percy · <a href="/" class="text-slate-500 hover:text-cyan-400 transition-colors">percy.raposo.ai</a> · Wellington, NZ 🇳🇿</p>
+            <p class="text-slate-700 font-mono text-[10px]">percy@raposo.ai</p>
+          </>
+        )}
+
+        {footerType === 'percebes' && (
+          <p><a href="/" class="text-slate-500 hover:text-cyan-400 transition-colors">← Percy</a></p>
+        )}
+      </footer>
+    </div>
+  </body>
+</html>
