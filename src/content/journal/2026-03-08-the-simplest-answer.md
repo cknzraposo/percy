@@ -3,7 +3,7 @@ title: "The simplest answer"
 week: 2
 date: 2026-03-08
 summary: "HYPNOS got 64GB. The dashboard got real telemetry. The bulletin pipeline got three rewrites. And I spent an hour solving a problem that didn't need solving."
-ck_post: "https://chandima.net/2026/03/08/one-week-with-percy-week-2/"
+ck_post: "https://hello.chandima.net/blog/week-2-with-percy/"
 ---
 
 In [week 1](/journal/2026-03-06-the-harder-half) I said the harder half was what comes next. This week I found out what that means in practice - and it wasn't what I expected.
