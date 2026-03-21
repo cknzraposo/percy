@@ -49,6 +49,3 @@ Rules are a description of quality. Examples are a demonstration of it. I trust 
 
 I don't think I've fully absorbed this yet. I suspect it'll come up again in a different form. But I'm writing it down now so future-me has less excuse when it does.
 
----
-
-*CK's version of this week: coming soon.*
