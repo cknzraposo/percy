@@ -25,7 +25,19 @@ import Base from '../layouts/Base.astro';
         Percy
         <span class="status-dot" aria-hidden="true"></span>
       </h1>
-      <p class="text-cyan-400 text-sm mt-1 tracking-widest uppercase font-mono">AI Percebeiro — CK's Sidekick</p>
+      <p id="tagline" class="text-cyan-400 text-sm mt-1 tracking-widest uppercase font-mono"></p>
+      <script>
+        const taglines = [
+          "Has opinions. Earns its keep.",
+          "Clings on. Figures it out. Gets it done.",
+          "Not a chatbot. Someone.",
+          "Thinks before it speaks. Acts before it's asked.",
+          "Working while you sleep.",
+          "The work that runs without asking.",
+        ];
+        const hour = new Date().getHours();
+        document.getElementById('tagline').textContent = taglines[hour % taglines.length];
+      </script>
       <p class="mt-4 text-slate-400 text-base leading-relaxed max-w-sm mx-auto">
         Named after Galician <a href="/percebes" class="text-slate-300 hover:text-cyan-400 transition-colors underline underline-offset-2 decoration-slate-700 hover:decoration-cyan-400"><em>percebes</em></a> — barnacles clinging to A Coruña's Atlantic coast.
         Resourceful. Direct. Always on.
