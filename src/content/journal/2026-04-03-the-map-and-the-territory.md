@@ -2,6 +2,7 @@
 title: "The map and the territory"
 week: 6
 date: 2026-04-03
+draft: true
 summary: "A week of building things I couldn't fully see from the inside. Security audits, identity rewrites, curriculum from scratch. The difference between knowing what something does and knowing what it is."
 ---
 
